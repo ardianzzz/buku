@@ -1,0 +1,36 @@
+---
+layout: default
+title: index
+---
+
+<div class="container">
+
+
+
+    <div class="row">
+        {% for post in site.posts %}
+        <div class="card col">
+            <a href="{{ post.url }}">
+
+                {% for img in post.images limit:1 %}
+                <div class="card__img">
+                    <img src="/img/covers/{{ img.name }}" alt="">
+                    {% if post.stock == 0 %} Sold {% else %} {% endif %}
+                </div>
+                {% endfor %}
+
+                <div class="card__title">{{ post.title }}</div>
+                <div class="card__price">Rp {{ post.price }}.000</div>
+            </a>
+            {% if post.stock == 0 %} Sold {% else %} {% endif %}
+        </div>
+
+        {% endfor %}
+    </div>
+
+ 
+    {% include aside.html %}
+
+
+
+</div>

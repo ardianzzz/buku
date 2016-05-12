@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Pola UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="site-title"><a href="/">tokobuku</a></h1>
+        <nav>
+            <ul class="nav">
+                {% for nav_item in site.data.nav %} {% if page.url == nav_item.link %}
+                <li class="active">
+                    {% else %}
+                    <li>
+                        {% endif %}
+                        <a href="{{ nav_item.link }}">{{ nav_item.name }}</a>
+                    </li>
+                    {% endfor %}
+            </ul>
+        </nav>
+        <div class="mainbar">
+            {{content}}
+        </div>
+    </div>
+    
+
+
+</body>
+
+</html>

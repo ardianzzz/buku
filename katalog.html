@@ -1,0 +1,26 @@
+---
+layout: default
+title: index
+---
+
+
+<div class="container-fluid">
+
+
+<div class="post">
+  {% for post in site.posts %}
+    <div class="card">
+      <a href="{{ post.url }}">
+          <img src="/img/{{ post.thumbnail }}" alt="">
+          <div class="card__title">{{ post.title }}</div>
+          <div class="card__price">Rp {{ post.price | money_without_currency }}</div>
+      </a>
+         {% if post.stock == 0 %}
+                Sold
+                {% else %}
+                
+        {% endif %}
+    </div>
+  {% endfor %}
+
+</div>

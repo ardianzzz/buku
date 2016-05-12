@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="container-fluid">
+    <div class="post" style="text-align:center;max-width: 76.8rem;margin:0 auto;">
+        <div class="post__header">
+            <div class="post__title">{{ page.title }}</div>
+            <div class="post__meta">
+                <div class="post__pages">
+                    {{ page.pages }} halaman /
+                </div>
+                <div class="post__publisher">{{ page.publisher }} /</div>
+                <div class="post__price">Rp {{ page.price }}.000</div>
+            </div>
+        </div>
+        {% for img in page.images %}
+        <figure class="post__img">
+            <img src="/img/covers/{{ img.name }}" alt="">
+        </figure>
+        {% endfor %}
+        <div style="max-width: 34em;margin:0 auto">
+                <div class="post__author">{{ page.author }}</div>
+            
+            {{ content }}
+            
+        </div>
+    </div>
+</div>
+
+
+
+    {% include aside.html %}
+
+<!-- <div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    {% for post in site.related_posts limit:3 %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div> -->
+
