@@ -2,36 +2,34 @@
 layout: default
 ---
 
-<div class="container-fluid">
-    <div class="post" style="text-align:center;max-width: 76.8rem;margin:0 auto;">
-        <div class="post__header">
-            <div class="post__title">{{ page.title }}</div>
-            <div class="post__meta">
-                <div class="post__pages">
-                    {{ page.pages }} halaman /
-                </div>
-                <div class="post__publisher">{{ page.publisher }} /</div>
-                <div class="post__price">Rp {{ page.price }}.000</div>
+<div class="post" style="text-align:center;max-width: 76.8rem;margin:0 auto;">
+    <div class="post__header">
+        <div class="post__title">{{ page.title }}</div>
+        <div class="post__meta">
+            <div class="post__pages">
+                {{ page.pages }} halaman
             </div>
+            <div style="display: table-cell;color: #999;width: 0;vertical-align: middle;padding:0;">/</div>
+            <div class="post__publisher">{{ page.publisher }}</div>
+            <div style="display: table-cell;color: #999;width: 0;vertical-align: middle;padding:0;">/</div>
+            <div class="post__price">Rp {{ page.price }}.000</div>
         </div>
+    </div>
+
+    
         {% for img in page.images %}
         <figure class="post__img">
             <img src="/img/covers/{{ img.name }}" alt="">
         </figure>
         {% endfor %}
-        <div style="max-width: 34em;margin:0 auto">
-                <div class="post__author">{{ page.author }}</div>
-            
+        <div class="post__content">
+            <div class="post__author">{{ page.author }}</div>
+
+            <div class="post__separator"></div>
             {{ content }}
-            
         </div>
-    </div>
 </div>
-
-
-
-    {% include aside.html %}
-
+{% include aside.html %}
 <!-- <div id="related">
   <h2>Related Posts</h2>
   <ul class="posts">
@@ -40,4 +38,5 @@ layout: default
     {% endfor %}
   </ul>
 </div> -->
+
 
